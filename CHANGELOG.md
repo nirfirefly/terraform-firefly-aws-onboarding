@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.0.0...v1.1.0) (2022-12-12)
+
+
+### Features
+
+* s3 notifications permissions ([393e93f](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/393e93f9edb92a9ce82e4ea731eda2c1a8225d98))
+
 ## 1.0.0 (2022-12-12)
 
 
