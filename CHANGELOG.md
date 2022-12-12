@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.0 (2022-12-12)
+
+
+### Features
+
+* firefly AWS integration with terraform ([9e842c7](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/9e842c7133037a601ecba7bd126ecc962431548c))
+
 ## 1.0.0 (2022-12-01)
 
 
