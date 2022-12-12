@@ -61,7 +61,7 @@ variable is_event_driven {
 
 variable terraform_create_rules {
   type        = bool
-  default     = true
+  default     = false
   description = "Create eventbridge rules using terraform?"
 }
 
