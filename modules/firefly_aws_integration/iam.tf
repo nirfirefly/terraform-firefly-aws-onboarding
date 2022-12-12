@@ -159,7 +159,7 @@ locals {
   s3_objects_to_allow = var.use_config_service ?  concat(local.s3_objects, local.config_service_objects) : local.s3_objects
 }
 
-resource "aws_iam_policy" "firefly_s3_specific_read_permission" {
+resource "aws_iam_policy" "firefly_s3_specific_permission" {
   name        = "S3SpecificReadPermission"
   path        = "/"
   description = "Read only permission for the Specific S3 Buckets"
@@ -180,6 +180,13 @@ resource "aws_iam_policy" "firefly_s3_specific_read_permission" {
         ],
         "Effect" : "Deny",
         "NotResource" : local.s3_objects_to_allow
+      },
+      {
+        "Action" : [
+          "s3:PutBucketNotification"
+        ],
+        "Effect" : "Allow",
+        "NotResource" : "arn:aws:s3:::*"
       },
     ]
   })
@@ -211,9 +218,9 @@ resource "aws_iam_role_policy_attachment" "firefly_readonly_policy_deny_list" {
   policy_arn = aws_iam_policy.firefly_readonly_policy_deny_list.arn
 }
 
-resource "aws_iam_role_policy_attachment" "firefly_s3_specific_read_permission" {
+resource "aws_iam_role_policy_attachment" "firefly_s3_specific_permission" {
   role       = aws_iam_role.firefly_cross_account_access_role.name
-  policy_arn = aws_iam_policy.firefly_s3_specific_read_permission.arn
+  policy_arn = aws_iam_policy.firefly_s3_specific_permission.arn
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_readonly_access" {

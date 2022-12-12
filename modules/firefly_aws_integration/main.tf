@@ -20,7 +20,7 @@ output "response_code" {
 
 resource "time_sleep" "wait_10_seconds" {
   depends_on = [
-    aws_iam_policy.firefly_readonly_policy_deny_list, aws_iam_policy.firefly_s3_specific_read_permission,
+    aws_iam_policy.firefly_readonly_policy_deny_list, aws_iam_policy.firefly_s3_specific_permission,
     aws_iam_role.firefly_cross_account_access_role
   ]
 
@@ -64,7 +64,7 @@ resource "terracurl_request" "firefly_aws_integration_request" {
   destroy_request_body =  ""
   destroy_response_codes = [200]
    depends_on = [
-    aws_iam_policy.firefly_readonly_policy_deny_list, aws_iam_policy.firefly_s3_specific_read_permission,
+    aws_iam_policy.firefly_readonly_policy_deny_list, aws_iam_policy.firefly_s3_specific_permission,
     aws_iam_role.firefly_cross_account_access_role, time_sleep.wait_10_seconds
   ]
 }
