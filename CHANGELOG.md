@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.2.0...v1.3.0) (2022-12-25)
+
+
+### Features
+
+* run workflow on exist integration ([#4](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/4)) ([479b4ad](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/479b4ad83658fa7cd59f31ec5b8e260f6e948f6e))
+
 ## [1.2.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.1.0...v1.2.0) (2022-12-22)
 
 
