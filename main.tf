@@ -436,6 +436,8 @@ module "firefly_aws_integration" {
   role_external_id = var.role_external_id
   role_name = var.firefly_role_name
   firefly_deny_list_policy_name = var.firefly_deny_list_policy_name
+  terraform_create_rules = var.terraform_create_rules
+  event_driven_regions = var.event_driven_regions
   providers          = {
     aws = aws.us_east_1
   }
@@ -454,9 +456,9 @@ module "firefly_eventbridge_permissions" {
   }
 }
 
-// create eventbridge rules using workflow
+// create eventbridge rules using workflow for exist integration
 module "run_workflow" {
-  count = var.is_event_driven && !var.terraform_create_rules ? 1 : 0
+  count = var.is_event_driven && !var.terraform_create_rules && var.exist_integration ? 1 : 0
   source = "./modules/run_workflow"
   firefly_secret_key = var.firefly_secret_key
   firefly_access_key = var.firefly_access_key
