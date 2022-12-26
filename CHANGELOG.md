@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.3.0...v1.4.0) (2022-12-26)
+
+
+### Features
+
+* remove output file from exmaple and release version ([#5](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/5)) ([148e216](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/148e2167599d78c10b062d8f63ae7f6799e5470c))
+
 ## [1.3.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.2.0...v1.3.0) (2022-12-25)
 
 
