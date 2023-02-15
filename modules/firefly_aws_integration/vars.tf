@@ -1,11 +1,19 @@
 variable "firefly_access_key" {
   type        = string
   description = "Your authentication access_key"
+  default = ""
 }
 
 variable "firefly_secret_key" {
   type        = string
   description = "Your authentication secret_key"
+  default = ""
+}
+
+variable "firefly_token" {
+  type = string
+  description = "Token returned as result of login request, if provided firefly_access_key and firefly_secret_key are ignored"
+  default = ""
 }
 
 variable "name" {

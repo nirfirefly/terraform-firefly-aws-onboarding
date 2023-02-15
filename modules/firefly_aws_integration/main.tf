@@ -1,23 +1,3 @@
-
-data "terracurl_request" "firefly_login" {
-  name           = "firefly_aws_integration"
-  url            = "${var.firefly_endpoint}/account/access_keys/login"
-  method         = "POST"
-  headers        = {
-    Content-Type: "application/json",
-  }
-  request_body = jsonencode({ "accessKey"=var.firefly_access_key,  "secretKey"=var.firefly_secret_key })
-
-}
-
-output "token" {
-  value = jsondecode(data.terracurl_request.firefly_login.response).access_token
-}
-
-output "response_code" {
-  value = data.terracurl_request.firefly_login.response
-}
-
 resource "time_sleep" "wait_10_seconds" {
   depends_on = [
     aws_iam_policy.firefly_readonly_policy_deny_list, aws_iam_policy.firefly_s3_specific_permission,
@@ -46,7 +26,7 @@ resource "terracurl_request" "firefly_aws_integration_request" {
 
   headers = {
     Content-Type = "application/json"
-    Authorization: "Bearer ${jsondecode(data.terracurl_request.firefly_login.response).access_token}"
+    Authorization: "Bearer ${var.firefly_token}"
   }
 
    lifecycle {

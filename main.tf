@@ -423,10 +423,8 @@ provider "aws" {
 }
 
 module "firefly_aws_integration" {
-  count = var.exist_integration? 0 : 1
   source = "./modules/firefly_aws_integration"
-  firefly_secret_key = var.firefly_secret_key
-  firefly_access_key = var.firefly_access_key
+  firefly_token = var.firefly_token
   name = var.name
   firefly_endpoint = var.firefly_endpoint
   event_driven = var.is_event_driven
@@ -460,8 +458,7 @@ module "firefly_eventbridge_permissions" {
 module "run_workflow" {
   count = var.is_event_driven && !var.terraform_create_rules && var.exist_integration ? 1 : 0
   source = "./modules/run_workflow"
-  firefly_secret_key = var.firefly_secret_key
-  firefly_access_key = var.firefly_access_key
+  firefly_token = var.firefly_token
   name = var.name
   firefly_endpoint = var.firefly_endpoint
   events_role_arn = module.firefly_eventbridge_permissions[0].eventbridge_rule_role_arn
