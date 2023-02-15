@@ -11,4 +11,5 @@ module "rule" {
       "readOnly" : [false]
     }
   })
+  tags = var.tags
 }

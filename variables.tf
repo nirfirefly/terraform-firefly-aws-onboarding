@@ -99,3 +99,9 @@ variable "enable_evntbridge_permissions" {
   default = true
   description = "enable firefly eventbridge permissions"
 }
+
+variable "tags" {
+  type = map
+  default = {}
+  description = "Tags to apply to all created AWS resources"
+}

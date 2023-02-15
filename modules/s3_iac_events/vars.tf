@@ -24,3 +24,9 @@ variable "prefix"{
   default = ""
   description = "The s3 object prefix to produce notifications from"
 }
+
+variable "tags" {
+  type = map
+  default = {}
+  description = "Tags to apply to all created AWS resources"
+}

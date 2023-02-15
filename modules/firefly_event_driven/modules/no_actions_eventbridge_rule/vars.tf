@@ -21,3 +21,9 @@ variable "service_regions"{
 variable "eventbridge_role_arn"{
   type = string
 }
+
+variable "tags" {
+  type = map
+  default = {}
+  description = "Tags to apply to all created AWS resources"
+}

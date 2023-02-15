@@ -8,6 +8,7 @@ module "rule" {
     service_regions = each.value["regions"]
     target_event_bus_arn = var.target_event_bus_arn
     eventbridge_role_arn = var.eventbridge_role_arn
+    tags = var.tags
 } 
 
 module "no_actions_rule" {
@@ -19,4 +20,5 @@ module "no_actions_rule" {
     service_regions = each.value["regions"]
     target_event_bus_arn = var.target_event_bus_arn
     eventbridge_role_arn = var.eventbridge_role_arn
+    tags = var.tags
 } 

@@ -77,3 +77,9 @@ variable "terraform_create_rules" {
   type = bool
   default = false
 }
+
+variable "tags" {
+  type = map
+  default = {}
+  description = "Tags to apply to all created AWS resources"
+}

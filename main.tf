@@ -452,6 +452,7 @@ module "firefly_eventbridge_permissions" {
   providers          = {
     aws = aws.us_east_1
   }
+  tags = var.tags
 }
 
 // create eventbridge rules using workflow for exist integration
@@ -483,6 +484,7 @@ module "event_driven_ap_northeast_1" {
   providers      = {
     aws = aws.ap_northeast_1
   }
+  tags = var.tags
 }
 
 module "event_driven_ap_northeast_2" {
@@ -499,6 +501,7 @@ module "event_driven_ap_northeast_2" {
   providers      = {
     aws = aws.ap_northeast_2
   }
+  tags = var.tags
 }
 
 module "event_driven_ap_northeast_3" {
@@ -515,6 +518,8 @@ module "event_driven_ap_northeast_3" {
   providers      = {
     aws = aws.ap_northeast_3
   }
+
+  tags = var.tags
 }
 
 module "event_driven_ap_south_1" {
@@ -531,6 +536,7 @@ module "event_driven_ap_south_1" {
   providers      = {
     aws = aws.ap_south_1
   }
+  tags = var.tags
 }
 
 module "event_driven_ap_southeast_1" {
@@ -547,6 +553,7 @@ module "event_driven_ap_southeast_1" {
   providers      = {
     aws = aws.ap_southeast_1
   }
+  tags = var.tags
 }
 
 module "event_driven_ap_southeast_2" {
@@ -563,6 +570,7 @@ module "event_driven_ap_southeast_2" {
   providers      = {
     aws = aws.ap_southeast_2
   }
+  tags = var.tags
 }
 
 module "event_driven_ca_central_1" {
@@ -579,6 +587,7 @@ module "event_driven_ca_central_1" {
   providers      = {
     aws = aws.ca_central_1
   }
+  tags = var.tags
 }
 
 module "event_driven_eu_central_1" {
@@ -595,6 +604,8 @@ module "event_driven_eu_central_1" {
   providers      = {
     aws = aws.eu_central_1
   }
+
+  tags = var.tags
 }
 
 module "event_driven_eu_north_1" {
@@ -611,6 +622,7 @@ module "event_driven_eu_north_1" {
   providers      = {
     aws = aws.eu_north_1
   }
+  tags = var.tags
 }
 
 module "event_driven_eu_west_1" {
@@ -627,6 +639,8 @@ module "event_driven_eu_west_1" {
   providers      = {
     aws = aws.eu_west_1
   }
+
+  tags = var.tags
 }
 
 module "event_driven_eu_west_2" {
@@ -643,6 +657,7 @@ module "event_driven_eu_west_2" {
   providers      = {
     aws = aws.eu_west_2
   }
+  tags = var.tags
 }
 
 module "event_driven_eu_west_3" {
@@ -659,6 +674,7 @@ module "event_driven_eu_west_3" {
   providers      = {
     aws = aws.eu_west_3
   }
+  tags = var.tags
 }
 
 module "event_driven_sa_east_1" {
@@ -675,6 +691,7 @@ module "event_driven_sa_east_1" {
   providers      = {
     aws = aws.sa_east_1
   }
+  tags = var.tags
 }
 
 module "event_driven_us_east_1" {
@@ -691,6 +708,7 @@ module "event_driven_us_east_1" {
   providers      = {
     aws = aws.us_east_1
   }
+  tags = var.tags
 }
 
 module "event_driven_us_east_2" {
@@ -707,6 +725,7 @@ module "event_driven_us_east_2" {
   providers      = {
     aws = aws.us_east_2
   }
+  tags = var.tags
 }
 
 module "event_driven_us_west_1" {
@@ -723,6 +742,7 @@ module "event_driven_us_west_1" {
   providers      = {
     aws = aws.us_west_1
   }
+  tags = var.tags
 }
 
 module "event_driven_us_west_2" {
@@ -739,6 +759,7 @@ module "event_driven_us_west_2" {
   providers      = {
     aws = aws.us_west_2
   }
+  tags = var.tags
 }
 
 module "iac_events_ap_northeast_1" {
@@ -937,4 +958,5 @@ module "config_service_setup" {
     aws = aws.us_east_1
   }
   firefly_role_name = var.firefly_role_name
+  tags = var.tags
 }

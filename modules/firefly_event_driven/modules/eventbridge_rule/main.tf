@@ -11,4 +11,5 @@ module "rule" {
       "eventName" : var.rules
     }
   })
+  tags = var.tags
 }
