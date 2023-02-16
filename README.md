@@ -23,13 +23,13 @@ provider "aws" {
 
 
 module "firefly_auth" {
-  source = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.1.0"
+  source = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.5.0/modules/firefly_auth"
   firefly_access_key    = "YOUR_ACCESS_KEY"
   firefly_secret_key    = "YOUR_SECRET_KEY"
 }
 
 module "firefly-read-only" {
-  source              = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.1.0"
+  source              = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.5.0"
   firefly_token         = module.firefly_auth.firefly_token
   role_external_id    = "YOUR_EXTERNAL_ID"
   is_prod               = false/true
@@ -44,14 +44,14 @@ provider "aws" {
 }
 
 module "firefly_auth" {
-  source = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.1.0"
+  source = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.5.0/modules/firefly_auth"
   firefly_access_key    = "YOUR_ACCESS_KEY"
   firefly_secret_key    = "YOUR_SECRET_KEY"
 }
 
 module "firefly-read-only" {
-  source               = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.1.0"
-  firefly_token         = module.firefly_auth.firefly_token
+  source               = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.5.0"
+  firefly_token        = module.firefly_auth.firefly_token
   role_external_id     = "YOUR_EXTERNAL_ID"
   is_prod              = false/true
   is_event_driven      = true
@@ -68,14 +68,14 @@ provider "aws" {
 }
 
 module "firefly_auth" {
-  source = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.1.0"
+  source = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.5.0/modules/firefly_auth"
   firefly_access_key    = "YOUR_ACCESS_KEY"
   firefly_secret_key    = "YOUR_SECRET_KEY"
 }
 
 
 module "firefly-read-only" {
-  source               = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.1.0"
+  source               = "github.com/gofireflyio/terraform-firefly-aws-onboarding?ref=v1.5.0"
   firefly_token         = module.firefly_auth.firefly_token
   role_external_id     = "YOUR_EXTERNAL_ID"
   is_prod              = false/true

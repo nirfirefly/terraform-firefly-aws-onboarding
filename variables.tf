@@ -1,8 +1,3 @@
-variable "firefly_token" {
-  type = string
-  description = "Token returned as result of login request"
-}
-
 variable "name" {
   type        = string
   description = "Name of the AWS integration"
@@ -11,6 +6,24 @@ variable "name" {
 variable "role_external_id" {
   type        = string
   description = "The External Id for the Firefly role generated"
+}
+
+variable "firefly_token" {
+  type = string
+  description = "Token returned as result of login request"
+  default = ""
+}
+
+variable "firefly_access_key" {
+  type        = string
+  description = "Your authentication access_key"
+  default = ""
+}
+
+variable "firefly_secret_key" {
+  type        = string
+  description = "Your authentication secret_key"
+  default = ""
 }
 
 variable "firefly_endpoint" {

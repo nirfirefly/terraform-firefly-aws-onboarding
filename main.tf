@@ -422,10 +422,18 @@ provider "aws" {
 
 }
 
+module "firefly_auth" {
+  count = var.firefly_token == "" ? 1 : 0
+  source = "./modules/firefly_auth"
+  firefly_endpoint = var.firefly_endpoint
+  firefly_access_key = var.firefly_access_key
+  firefly_secret_key = var.firefly_secret_key
+}
+
 module "firefly_aws_integration" {
   count = var.exist_integration? 0 : 1
   source = "./modules/firefly_aws_integration"
-  firefly_token = var.firefly_token
+  firefly_token = length(module.firefly_auth) > 0 ? module.firefly_auth[0].firefly_token : var.firefly_token
   name = var.name
   firefly_endpoint = var.firefly_endpoint
   event_driven = var.is_event_driven
