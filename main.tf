@@ -423,6 +423,7 @@ provider "aws" {
 }
 
 module "firefly_aws_integration" {
+  count = var.exist_integration? 0 : 1
   source = "./modules/firefly_aws_integration"
   firefly_token = var.firefly_token
   name = var.name
