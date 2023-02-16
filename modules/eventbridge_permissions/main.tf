@@ -31,11 +31,13 @@ resource "aws_iam_policy" "firefly_eventbridge_permission" {
           }
     ]
   })
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_eventbridge_permissions" {
   role       = var.firefly_role_name
   policy_arn = aws_iam_policy.firefly_eventbridge_permission.arn
+
 }
 
 
@@ -56,6 +58,7 @@ resource "aws_iam_role" "invoke_firefly_event_bus" {
   ]
 }
 EOF
+  tags = var.tags
 }
 
 resource "aws_iam_policy" "invoke_firefly_event_bus" {
@@ -72,6 +75,7 @@ resource "aws_iam_policy" "invoke_firefly_event_bus" {
         }
     ]
   })
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "invoke_firefly_event_bus" {

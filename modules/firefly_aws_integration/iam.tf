@@ -147,6 +147,7 @@ resource "aws_iam_policy" "firefly_readonly_policy_deny_list" {
         },
     ]
   })
+  tags = var.tags
 }
 
 locals {
@@ -190,6 +191,7 @@ resource "aws_iam_policy" "firefly_s3_specific_permission" {
       },
     ]
   })
+  tags = var.tags
 }
 
 resource "aws_iam_role" "firefly_cross_account_access_role" {
@@ -211,6 +213,7 @@ resource "aws_iam_role" "firefly_cross_account_access_role" {
       }
     ]
   })
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_readonly_policy_deny_list" {

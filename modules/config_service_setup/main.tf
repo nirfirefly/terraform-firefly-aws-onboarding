@@ -32,6 +32,7 @@ resource "aws_iam_policy" "config_service_management_policy" {
       }
     ]
   })
+  tags = var.tags
 }
 
 resource "aws_iam_role" "aws_config_role" {
@@ -58,11 +59,13 @@ POLICY
     "arn:aws:iam::aws:policy/SecurityAudit",
     "arn:aws:iam::aws:policy/ReadOnlyAccess",
   ]
+  tags = var.tags
 }
 
 resource "aws_s3_bucket" "config_bucket" {
   bucket        = "aws-config-service-bucket-${data.aws_caller_identity.current.account_id}"
   force_destroy = true
+  tags = var.tags
 }
 
 resource "aws_iam_policy" "config_service_firefly_permissions" {
@@ -96,6 +99,7 @@ resource "aws_iam_policy" "config_service_firefly_permissions" {
       }
     ]
   })
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_config_service_permissions" {

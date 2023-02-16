@@ -1,13 +1,3 @@
-variable "firefly_access_key" {
-  type        = string
-  description = "Your authentication access_key"
-}
-
-variable "firefly_secret_key" {
-  type        = string
-  description = "Your authentication secret_key"
-}
-
 variable "name" {
   type        = string
   description = "Name of the AWS integration"
@@ -16,6 +6,24 @@ variable "name" {
 variable "role_external_id" {
   type        = string
   description = "The External Id for the Firefly role generated"
+}
+
+variable "firefly_token" {
+  type = string
+  description = "Token returned as result of login request"
+  default = ""
+}
+
+variable "firefly_access_key" {
+  type        = string
+  description = "Your authentication access_key"
+  default = ""
+}
+
+variable "firefly_secret_key" {
+  type        = string
+  description = "Your authentication secret_key"
+  default = ""
 }
 
 variable "firefly_endpoint" {
@@ -103,4 +111,10 @@ variable "enable_evntbridge_permissions" {
   type        = bool
   default = true
   description = "enable firefly eventbridge permissions"
+}
+
+variable "tags" {
+  type = map
+  default = {}
+  description = "Tags to apply to all created AWS resources"
 }
