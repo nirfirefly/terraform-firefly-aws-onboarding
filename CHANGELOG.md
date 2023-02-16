@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.4.0...v1.5.0) (2023-02-16)
+
+
+### Features
+
+* seperate auth into seperate module ([2e438c2](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/2e438c2474f98369bc710322cf42501c28e4bbf6))
+
 ## [1.4.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.3.0...v1.4.0) (2022-12-26)
 
 
