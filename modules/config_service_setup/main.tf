@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_iam_policy" "config_service_management_policy" {
-  name        = "ConfigServiceManagementPolicy"
+  name        = "${var.resource_prefix}ConfigServiceManagementPolicy"
   path        = "/"
   description = "this policy allows the config service to use it's s3 bucket to store the service's data"
   policy      = jsonencode({
@@ -36,7 +36,7 @@ resource "aws_iam_policy" "config_service_management_policy" {
 }
 
 resource "aws_iam_role" "aws_config_role" {
-  name                = "aws-config-role-firefly"
+  name                = "${var.resource_prefix}aws-config-role-firefly"
   description         = "this role allows the config service a read only permissions to the cloud configuration, and permissions to it's s3 bucket"
   assume_role_policy  = <<POLICY
 {
@@ -63,13 +63,13 @@ POLICY
 }
 
 resource "aws_s3_bucket" "config_bucket" {
-  bucket        = "aws-config-service-bucket-${data.aws_caller_identity.current.account_id}"
+  bucket        = "${var.resource_prefix}aws-config-service-bucket-${data.aws_caller_identity.current.account_id}"
   force_destroy = true
   tags = var.tags
 }
 
 resource "aws_iam_policy" "config_service_firefly_permissions" {
-  name        = "fireflyConfigServicePermissions"
+  name        = "${var.resource_prefix}fireflyConfigServicePermissions"
   path        = "/"
   description = "this policy allows firefly to create/stop/delete a configuration recorder"
   policy      = jsonencode({

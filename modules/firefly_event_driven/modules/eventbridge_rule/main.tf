@@ -12,4 +12,5 @@ module "rule" {
     }
   })
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }

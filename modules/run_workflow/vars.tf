@@ -22,3 +22,9 @@ variable event_driven_regions {
   type        = list(string)
   description = "The list of regions to install firefly event driven in"
 }
+
+variable "resource_prefix" {
+  type = string
+  default = ""
+  description = "Prefix to add to all resources created"
+}

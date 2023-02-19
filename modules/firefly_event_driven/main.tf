@@ -21,4 +21,4 @@ module "no_actions_rule" {
     target_event_bus_arn = var.target_event_bus_arn
     eventbridge_role_arn = var.eventbridge_role_arn
     tags = var.tags
-} 
+}

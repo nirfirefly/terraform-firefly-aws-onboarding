@@ -45,7 +45,7 @@ variable "event_driven"{
 }
 
 variable "target_event_bus_arn"{
-    type = string
+  type = string
 }
 
 variable "role_external_id" {
@@ -82,4 +82,16 @@ variable "tags" {
   type = map
   default = {}
   description = "Tags to apply to all created AWS resources"
+}
+
+variable "resource_prefix" {
+  type = string
+  default = ""
+  description = "Prefix to add to all resources created"
+}
+
+variable "firefly_organization_id" {
+  type = string
+  default = "094724549126"
+  description = "AWS account ID to allow assume role from"
 }

@@ -118,3 +118,15 @@ variable "tags" {
   default = {}
   description = "Tags to apply to all created AWS resources"
 }
+
+variable "resource_prefix" {
+  type = string
+  default = ""
+  description = "Prefix to add to all resources created"
+}
+
+variable "firefly_organization_id" {
+  type = string
+  default = "094724549126"
+  description = "FireFly AWS account ID to allow assume role from, do not override unless explicitly needed"
+}
