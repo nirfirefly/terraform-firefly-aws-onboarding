@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.5.0...v1.6.0) (2023-02-19)
+
+
+### Features
+
+* allow running multienv ([dcb98cb](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/dcb98cbe7b73cb4659d4aeb2054566f98b850d39))
+
 ## [1.5.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.4.0...v1.5.0) (2023-02-16)
 
 
