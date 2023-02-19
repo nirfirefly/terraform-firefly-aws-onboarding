@@ -1,3 +1,8 @@
+locals {
+  firefly_role_name = "${var.resource_prefix}${var.firefly_role_name}"
+  firefly_deny_list_policy_name = "${var.resource_prefix}${var.firefly_deny_list_policy_name}"
+}
+
 provider "aws" {
   alias      = "ap_northeast_1"
   region     = "ap-northeast-1"
@@ -436,25 +441,27 @@ module "firefly_aws_integration" {
   firefly_token = length(module.firefly_auth) > 0 ? module.firefly_auth[0].firefly_token : var.firefly_token
   name = var.name
   firefly_endpoint = var.firefly_endpoint
+  firefly_organization_id = var.firefly_organization_id
   event_driven = var.is_event_driven
   target_event_bus_arn = var.target_event_bus_arn
   is_prod = var.is_prod
   full_scan_enabled = var.full_scan_enabled
   role_external_id = var.role_external_id
-  role_name = var.firefly_role_name
-  firefly_deny_list_policy_name = var.firefly_deny_list_policy_name
+  role_name = local.firefly_role_name
+  firefly_deny_list_policy_name = local.firefly_deny_list_policy_name
   terraform_create_rules = var.terraform_create_rules
   event_driven_regions = var.event_driven_regions
   providers          = {
     aws = aws.us_east_1
   }
+  resource_prefix = var.resource_prefix
 }
 
 module "firefly_eventbridge_permissions" {
   count = var.enable_evntbridge_permissions ? 1 : 0
   source = "./modules/eventbridge_permissions"
   target_event_bus_arn = var.target_event_bus_arn
-  firefly_role_name = var.firefly_role_name
+  firefly_role_name = local.firefly_role_name
   depends_on = [
     module.firefly_aws_integration
   ]
@@ -462,6 +469,7 @@ module "firefly_eventbridge_permissions" {
     aws = aws.us_east_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 // create eventbridge rules using workflow for exist integration
@@ -494,6 +502,7 @@ module "event_driven_ap_northeast_1" {
     aws = aws.ap_northeast_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_ap_northeast_2" {
@@ -511,6 +520,7 @@ module "event_driven_ap_northeast_2" {
     aws = aws.ap_northeast_2
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_ap_northeast_3" {
@@ -527,8 +537,8 @@ module "event_driven_ap_northeast_3" {
   providers      = {
     aws = aws.ap_northeast_3
   }
-
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_ap_south_1" {
@@ -546,6 +556,7 @@ module "event_driven_ap_south_1" {
     aws = aws.ap_south_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_ap_southeast_1" {
@@ -563,6 +574,7 @@ module "event_driven_ap_southeast_1" {
     aws = aws.ap_southeast_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_ap_southeast_2" {
@@ -580,6 +592,7 @@ module "event_driven_ap_southeast_2" {
     aws = aws.ap_southeast_2
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_ca_central_1" {
@@ -597,6 +610,7 @@ module "event_driven_ca_central_1" {
     aws = aws.ca_central_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_eu_central_1" {
@@ -615,6 +629,7 @@ module "event_driven_eu_central_1" {
   }
 
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_eu_north_1" {
@@ -632,6 +647,7 @@ module "event_driven_eu_north_1" {
     aws = aws.eu_north_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_eu_west_1" {
@@ -650,6 +666,7 @@ module "event_driven_eu_west_1" {
   }
 
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_eu_west_2" {
@@ -667,6 +684,7 @@ module "event_driven_eu_west_2" {
     aws = aws.eu_west_2
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_eu_west_3" {
@@ -684,6 +702,7 @@ module "event_driven_eu_west_3" {
     aws = aws.eu_west_3
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_sa_east_1" {
@@ -701,6 +720,7 @@ module "event_driven_sa_east_1" {
     aws = aws.sa_east_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_us_east_1" {
@@ -718,6 +738,7 @@ module "event_driven_us_east_1" {
     aws = aws.us_east_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_us_east_2" {
@@ -735,6 +756,7 @@ module "event_driven_us_east_2" {
     aws = aws.us_east_2
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_us_west_1" {
@@ -752,6 +774,7 @@ module "event_driven_us_west_1" {
     aws = aws.us_west_1
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "event_driven_us_west_2" {
@@ -769,6 +792,7 @@ module "event_driven_us_west_2" {
     aws = aws.us_west_2
   }
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }
 
 module "iac_events_ap_northeast_1" {
@@ -962,10 +986,11 @@ module "config_service_setup" {
   depends_on = [module.firefly_aws_integration]
   count = var.use_config_service ? 1 : 0
   source = "./modules/config_service_setup"
-  firefly_deny_policy_name = var.firefly_deny_list_policy_name
+  firefly_deny_policy_name = local.firefly_deny_list_policy_name
   providers = {
     aws = aws.us_east_1
   }
-  firefly_role_name = var.firefly_role_name
+  firefly_role_name = local.firefly_role_name
   tags = var.tags
+  resource_prefix = var.resource_prefix
 }

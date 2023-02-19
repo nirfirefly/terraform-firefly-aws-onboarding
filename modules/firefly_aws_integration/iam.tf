@@ -161,7 +161,7 @@ locals {
 }
 
 resource "aws_iam_policy" "firefly_s3_specific_permission" {
-  name        = "S3SpecificReadPermission"
+  name        = "${var.resource_prefix}S3SpecificReadPermission"
   path        = "/"
   description = "Read only permission for the Specific S3 Buckets"
 
@@ -202,7 +202,7 @@ resource "aws_iam_role" "firefly_cross_account_access_role" {
      {
         "Action" : "sts:AssumeRole",
         "Principal" : {
-          "AWS" : "arn:aws:iam::${local.organizationID}:root"
+          "AWS" : "arn:aws:iam::${var.firefly_organization_id}:root"
         },
         "Effect" : "Allow",
         "Condition": {

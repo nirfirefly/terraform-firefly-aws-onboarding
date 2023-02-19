@@ -102,9 +102,14 @@ exist_integration = true
 ```
 
 ### Optional
-You can add optionally add tags to each relevant resource:
+You can optionally add tags to each relevant resource:
 ```
 tags = {vendor: "firefly"}
+```
+
+You can optionally add a prefix to all created resource:
+```
+resource_prefix = "prod-"
 ```
 
 AWS credentials will be default unless adding one of the following params to the configuration:
