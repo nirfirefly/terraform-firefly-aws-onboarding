@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.6.0...v1.7.0) (2023-03-12)
+
+
+### Features
+
+* ([#11](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/11)) ([a59287a](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/a59287a1eb78064d4a2c69bda13bb6d572a7b7a3))
+* readme ([78e0c23](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/78e0c2388600f0238b790b9bfce264394b22de70))
+* readme ([#12](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/12)) ([1a64272](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/1a642720c873aad8b2f44768ead470ea9f02cfa8))
+
 ## [1.6.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.5.0...v1.6.0) (2023-02-19)
 
 
