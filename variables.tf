@@ -103,7 +103,7 @@ variable "iac_events_sns" {
 
 variable "use_config_service" {
   type        = bool
-  default     = true
+  default     = false
   description = "Allow Firefly to read the config service s3 objects"
 }
 
