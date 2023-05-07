@@ -54,7 +54,7 @@ variable "firefly_deny_list_policy_name" {
   description = "The name for the Firefly deny policy generated"
   default     = "FireflyReadonlyPolicyDenyList"
 }
-
+ 
 variable full_scan_enabled {
   type        = bool
   default     = true
