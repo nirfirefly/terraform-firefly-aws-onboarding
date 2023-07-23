@@ -21,7 +21,6 @@ resource "aws_iam_policy" "firefly_readonly_policy_deny_list" {
             "athena:GetQueryResultsStream",
             "athena:ListQueryExecutions",
             "auditmanager:*",
-            "aws-portal:*",
             "braket:Search*",
             "cassandra:*",
             "chime:GetApp*",
