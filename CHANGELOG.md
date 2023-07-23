@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.10.0...v1.11.0) (2023-07-23)
+
+
+### Features
+
+* Update aws portal policy ([fea3367](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/fea3367350ee476e7e664a0d833b6aabd59e5665))
+
 ## [1.10.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.9.0...v1.10.0) (2023-06-22)
 
 
