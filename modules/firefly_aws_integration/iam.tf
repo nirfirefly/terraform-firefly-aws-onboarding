@@ -139,7 +139,11 @@ resource "aws_iam_policy" "firefly_readonly_policy_deny_list" {
             "cognito-idp:GetSigningCertificate",
             "connect:GetFederationToken",
             "secretsmanager:GetRandomPassword",
-            "secretsmanager:GetSecretValue"
+            "secretsmanager:GetSecretValue",
+            "consolidatedbilling:*",
+            "freetier:*",
+            "invoicing:*",
+            "payments:*"
           ],
           "Effect": "Deny",
           "Resource": "*"
