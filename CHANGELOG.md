@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.12.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.11.0...v1.12.0) (2023-08-03)
+
+
+### Features
+
+* Add the following permissions to the Deny policy ([bdcab60](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/bdcab606e852a19fc83db8617ef1fde26547cd3a))
+
 ## [1.11.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.10.0...v1.11.0) (2023-07-23)
 
 
