@@ -26,6 +26,12 @@ variable "firefly_secret_key" {
   default = ""
 }
 
+variable "should_autodiscover_disabled" {
+  type        = bool
+  description = "Whether to create the integration with IaC auto discover (searches for state files in S3 buckets)"
+  default     = false
+}
+
 variable "firefly_endpoint" {
   type        = string
   description = "The Firefly endpoint to register account management"

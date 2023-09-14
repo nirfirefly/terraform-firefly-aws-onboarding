@@ -78,6 +78,12 @@ variable "terraform_create_rules" {
   default = false
 }
 
+variable "should_autodiscover_disabled" {
+  type        = bool
+  description = "Whether to create the integration with IaC auto discover (searches for state files in S3 buckets)"
+  default     = false
+}
+
 variable "tags" {
   type = map
   default = {}
