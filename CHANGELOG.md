@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.13.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.12.0...v1.13.0) (2023-09-18)
+
+
+### Features
+
+* Update readme enable_iac_auto_discover ([#27](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/27)) ([6d9029e](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/6d9029eb5f3616a6e5c7d3931f3e6afcbc607bc2))
+
 ## [1.12.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.11.0...v1.12.0) (2023-08-03)
 
 
