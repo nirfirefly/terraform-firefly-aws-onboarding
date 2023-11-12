@@ -258,3 +258,8 @@ resource "aws_iam_role_policy_attachment" "firefly_security_audit" {
   role       = aws_iam_role.firefly_cross_account_access_role.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
+
+resource "aws_iam_role_policy_attachment" "firefly_additional_fetching_permission" {
+  role       = aws_iam_role.firefly_cross_account_access_role.name
+  policy_arn = aws_iam_policy.firefly_additional_fetching_permission.arn
+}
