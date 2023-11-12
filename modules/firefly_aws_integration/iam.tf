@@ -197,6 +197,26 @@ resource "aws_iam_policy" "firefly_s3_specific_permission" {
   tags = var.tags
 }
 
+resource "aws_iam_policy" "firefly_additional_fetching_permission" {
+  name        = "${var.resource_prefix}AdditionalFetchingPermission"
+  path        = "/"
+  description = "Read only permission for missing aws resources"
+
+  policy = jsonencode({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+              "elasticmapreduce:GetAutoTerminationPolicy",
+            ]
+            "Resource": "arn:aws:elasticmapreduce:*:${local.account_id}:cluster/*"
+        }
+    ]
+})
+  tags = var.tags
+}
+
 resource "aws_iam_role" "firefly_cross_account_access_role" {
   name = var.role_name
   assume_role_policy = jsonencode({
