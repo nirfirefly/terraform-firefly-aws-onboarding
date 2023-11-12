@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.14.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.13.0...v1.14.0) (2023-11-12)
+
+
+### Features
+
+* add new policy for reading additional resources ([c292499](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/c292499a7022839b8509afd0a4427f7cc6ba3a5b))
+* add new policy for reading additional resources ([0624b75](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/0624b7559dfe666e8a9a7c740009d239505bfc21))
+
 ## [1.13.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.12.0...v1.13.0) (2023-09-18)
 
 
