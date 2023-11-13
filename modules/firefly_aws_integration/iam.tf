@@ -247,19 +247,23 @@ resource "aws_iam_role_policy_attachment" "firefly_readonly_policy_deny_list" {
 resource "aws_iam_role_policy_attachment" "firefly_s3_specific_permission" {
   role       = aws_iam_role.firefly_cross_account_access_role.name
   policy_arn = aws_iam_policy.firefly_s3_specific_permission.arn
+  depends_on = [ aws_iam_role_policy_attachment.firefly_readonly_policy_deny_list ]
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_readonly_access" {
   role       = aws_iam_role.firefly_cross_account_access_role.name
   policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+  depends_on = [ aws_iam_role_policy_attachment.firefly_s3_specific_permission ]
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_security_audit" {
   role       = aws_iam_role.firefly_cross_account_access_role.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+  depends_on = [ aws_iam_role_policy_attachment.firefly_readonly_access ]
 }
 
 resource "aws_iam_role_policy_attachment" "firefly_additional_fetching_permission" {
   role       = aws_iam_role.firefly_cross_account_access_role.name
   policy_arn = aws_iam_policy.firefly_additional_fetching_permission.arn
+  depends_on = [ aws_iam_role_policy_attachment.firefly_security_audit ]
 }
