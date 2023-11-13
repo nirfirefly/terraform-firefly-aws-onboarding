@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.15.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.14.0...v1.15.0) (2023-11-13)
+
+
+### Features
+
+* Attach iam policies async ([74a7ea0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/74a7ea0b039990c60cab9b7cfdc41d4beda4b381))
+
 ## [1.14.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.13.0...v1.14.0) (2023-11-12)
 
 
