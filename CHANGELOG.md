@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.16.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.15.0...v1.16.0) (2023-11-28)
+
+
+### Features
+
+* set max aws provider version ([f618621](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/f618621c8cad2a5b903dec0a110a946bb4ef29cf))
+
 ## [1.15.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.14.0...v1.15.0) (2023-11-13)
 
 
