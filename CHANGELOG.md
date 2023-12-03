@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.17.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.16.0...v1.17.0) (2023-12-03)
+
+
+### Features
+
+* allow scoping iac discovery to closed list of bucket ([#34](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/34)) ([a38a6a0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/a38a6a058d4fa9156c0046790e5997875bc4476a))
+
 ## [1.16.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.15.0...v1.16.0) (2023-11-28)
 
 
