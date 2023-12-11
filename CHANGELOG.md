@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.18.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.17.0...v1.18.0) (2023-12-11)
+
+
+### Features
+
+* allow reapply with auth failure ([#36](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/issues/36)) ([4f9c92a](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/commit/4f9c92a3269c6ea54d80602d2e6044e3a4061dd6))
+
 ## [1.17.0](https://github.com/gofireflyio/terraform-firefly-aws-onboarding/compare/v1.16.0...v1.17.0) (2023-12-03)
 
 
