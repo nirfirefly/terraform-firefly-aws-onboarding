@@ -7,8 +7,10 @@ updates:
     open-pull-requests-limit: 10
     reviewers:
       - "dependabot[bot]"
-    package-manager-update:
+    allow:
+        - dependency-name: "aws"
+    ignore:
       - dependency-name: "aws"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+        update-types: ["version-update:semver-patch"]
     commit-message:
       prefix: "feat"
